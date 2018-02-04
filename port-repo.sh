@@ -2,6 +2,7 @@ if [ ! -d $1 ]; then
     echo "-- clone --" && git clone $2 $1
 fi && \
 echo "-- cd $1 --" && cd $1 && \
+echo "-- checkout master --" && git checkout master && \
 echo "-- delete origin/HEAD --" && git remote set-head origin -d && \
 echo "-- remote set-url https --" && git remote set-url origin $2 && \
 for remote in `git branch -r`; do
